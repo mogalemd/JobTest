@@ -1,0 +1,50 @@
+﻿
+<link href="~/Content/themes/Grid.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+@model IEnumerable<JobTest.Models.Job>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+   
+    WebGrid grid = new WebGrid(Model, defaultSort: "client", rowsPerPage: 10); 
+}
+<header>
+    <h1></h1>
+</header>
+<h1>Current Job List</h1>
+<div>
+    @using(Html.BeginForm())
+   {
+  
+      <span>
+            @Html.Label("Search :-")  
+            @Html.TextBox("SearchKey", "", new { placeholder = "Search" })  
+      </span>
+       
+       <input type="submit" value="Search" />
+   }
+
+    <br />
+   
+       
+       
+       
+@grid.GetHtml(columns : grid.Columns(grid.Column("client", header : "Client"),
+                            grid.Column("jobnumber", "Job Number"),
+                            grid.Column("jobname", "Job Name"),
+                           grid.Column("due", "Due Date"),
+                           grid.Column("status", "Status")), tableStyle : "gTable")
+ 
+
+    </div>
+
+
+
+
+
+
+

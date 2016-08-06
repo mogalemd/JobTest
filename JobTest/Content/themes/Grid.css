@@ -1,0 +1,31 @@
+﻿
+    .gTable {
+        border-collapse: collapse;
+        border: 1px solid #c0c0c0;
+        width: 100%;
+    }
+
+        .gTable tr td {
+            padding: 5px;
+            border: 1px solid #c0c0c0;
+        }
+
+        .gTable tr:nth-child(2n+1) {
+            background-color: #eaeaea;
+        }
+
+        .gTable tr th {
+            background-color: #8fd9ff;
+        }
+
+    tfoot tr td {
+        background-color: #ffd800 !important;
+    }
+
+    .gTable tr:hover {
+        background-color: #fffddc;
+    }
+
+    .selectedRow {
+        background-color: #ff6a00 !important;
+    }
